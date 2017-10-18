@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Car } from './car';
- 
-const CARS: Car[] = [
-  { id: 11, plateNumber: 'AA 22 BB' },
-  { id: 12, plateNumber: 'CC 33 DD' }
-];
+import { CarService } from './car.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CarService]
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit{
+
   title = 'Car Rental';
-  cars = CARS;
+  cars;
   selectedCar: Car;
+
+  constructor(private carService: CarService) { }
+
+  getCars(): void {
+    this.carService.getCars().then(cars => this.cars = cars);
+  }
+ 
+  ngOnInit(): void {
+    this.getCars();
+  }
  
   onSelect(car: Car): void {
     this.selectedCar = car;
