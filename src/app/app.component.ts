@@ -1,32 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Car } from './car';
-import { CarService } from './car.service';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [CarService]
+  selector: 'my-app',
+  template: `
+	<h1>{{title}}</h1>
+	<nav>
+   	<a routerLink="/cars">Cars</a>
+	</nav>
+   	<router-outlet></router-outlet>
+	`
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent{
 
   title = 'Car Rental';
-  cars;
-  selectedCar: Car;
 
-  constructor(private carService: CarService) { }
-
-  getCars(): void {
-    this.carService.getCars().then(cars => this.cars = cars);
-  }
- 
-  ngOnInit(): void {
-    this.getCars();
-  }
- 
-  onSelect(car: Car): void {
-    this.selectedCar = car;
-  }
 }
