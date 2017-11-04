@@ -1,4 +1,4 @@
-<h2>Select your car:</h2>
+<h2>Select a car:</h2>
 <!-- <div>
   <label>Hero name:</label> <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">
@@ -8,12 +8,11 @@
 <ul class="cars">
   <li *ngFor="let car of cars" (click)="onSelect(car)"
       [class.selected]="car === selectedCar">
-    {{car.model}}: {{car.plateNumber}}
+    {{car.model}}: {{car.price}} euros/day
   </li>
 </ul>
 <div *ngIf="selectedCar">
-  <h2>
-    {{selectedCar.plateNumber | uppercase}} is my car
+  <h2>Selected car: {{selectedCar.model | uppercase}}
   </h2>
-  <button (click)="gotoDetail()">View Details</button>
+  <button (click)="gotoDetail()">Choose my rental options</button>
 </div>

@@ -5,4 +5,5 @@ export class Car {
   	model: String;
 	price: number;
 	numberOfDays: number;
+	rented: boolean;
 }

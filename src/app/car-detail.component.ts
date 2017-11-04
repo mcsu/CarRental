@@ -26,7 +26,12 @@ export class CarDetailComponent implements OnInit {
       .subscribe(car => this.car = car);
   }
 
-  save(): void {
+  rent(car): void {
+  	car.rented = true;
+  }
+  
+  cancelRental(car): void {
+  	car.rented = false;
   }
 
   goBack(): void {
