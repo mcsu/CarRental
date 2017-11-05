@@ -6,8 +6,7 @@
   </button>
 </div> -->
 <ul class="cars">
-  <li *ngFor="let car of cars" (click)="onSelect(car)"
-      [class.selected]="car === selectedCar">
+  <li *ngFor="let car of cars" (click)="onSelect(car)">
     {{car.model}}: {{car.price}} euros/day
   </li>
 </ul>

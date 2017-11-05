@@ -11,7 +11,7 @@ export class CarService {
   }
 
   getCar(id: number): Promise<Car> {
-    return Promise.resolve(CARS[0]);
+    return Promise.resolve(CARS[id]);
   }
 
 }

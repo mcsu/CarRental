@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location }                 from '@angular/common';
+import { Location } from '@angular/common';
 
 import { Car } from './car';
 import { CarService } from './car.service';
@@ -27,11 +27,11 @@ export class CarDetailComponent implements OnInit {
   }
 
   rent(car): void {
-  	car.rented = true;
+    car.rented = true;
   }
-  
+
   cancelRental(car): void {
-  	car.rented = false;
+    car.rented = false;
   }
 
   goBack(): void {
