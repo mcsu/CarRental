@@ -1,10 +1,4 @@
 <h2>Select a car:</h2>
-<!-- <div>
-  <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
-    Add
-  </button>
-</div> -->
 <ul class="cars">
   <li *ngFor="let car of cars" (click)="onSelect(car)">
     {{car.model}}: {{car.price}} euros/day
