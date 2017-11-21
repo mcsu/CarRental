@@ -27,11 +27,11 @@ export class CarDetailComponent implements OnInit {
   }
 
   rent(car): void {
-    car.rented = true;
+    this.carService.rent(car);
   }
 
   cancelRental(car): void {
-    car.rented = false;
+    this.carService.getBack(car);
   }
 
   goBack(): void {

@@ -14,4 +14,12 @@ export class CarService {
     return Promise.resolve(CARS[id]);
   }
 
+  rent(car) {
+    car.rented = true;
+  }
+
+  getBack(car) {
+    car.rented = false;
+  }
+
 }
